@@ -1,0 +1,17 @@
+---
+title: Windows
+description: How to create windows with Phoenix
+---
+
+## Window Creation
+
+`Phoenix:CreateWindow()` is the method used to create everything needed for UI development with Phoenix. Call it once after initializing the library.
+
+```lua
+local Window = Phoenix:CreateWindow({
+    Name = "Example Window",
+    BootTitle = "Boot Window",
+    MainTitle = "Main Window",
+    Theme = "Default"
+})
+```
