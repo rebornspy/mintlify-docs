@@ -62,13 +62,6 @@
             "pages": [
               "Phoenix/themes"
             ]
-          },
-          {
-            "group": "Security",
-            "pages": [
-              "Phoenix/anti-detection",
-              "Phoenix/secure-mode"
-            ]
           }
         ]
       },
