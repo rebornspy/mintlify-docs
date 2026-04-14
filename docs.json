@@ -1,0 +1,137 @@
+{
+  "$schema": "https://mintlify.com/docs.json",
+  "theme": "mint",
+  "name": "Developer Suite",
+  "colors": {
+    "primary": "#0088FF",
+    "light": "#3399FF",
+    "dark": "#0070D6"
+  },
+  "appearance": {
+    "default": "dark",
+    "strict": true
+  },
+  "icons": {
+    "library": "lucide"
+  },
+  "favicon": "/favicon.ico",
+  "fonts": {
+    "family": "Unica77LL",
+    "source": "/fonts/Unica77LL-Regular.woff2",
+    "format": "woff2",
+    "weight": 400
+  },
+  "navigation": {
+    "tabs": [
+      {
+        "tab": "Home",
+        "groups": [
+          {
+            "group": "Home",
+            "pages": ["index"]
+          }
+        ]
+      },
+      {
+        "tab": "Phoenix",
+        "groups": [
+          {
+            "group": "Overview",
+            "pages": [
+              "Phoenix/index"
+            ]
+          },
+          {
+            "group": "Getting started",
+            "pages": [
+              "Phoenix/getting-started",
+              "Phoenix/windows",
+              "Phoenix/notifications"
+            ]
+          },
+          {
+            "group": "Elements",
+            "pages": [
+              "Phoenix/elements/interactive",
+              "Phoenix/elements/keybinds",
+              "Phoenix/elements/text"
+            ]
+          },
+          {
+            "group": "Configuration",
+            "pages": [
+              "Phoenix/themes"
+            ]
+          },
+          {
+            "group": "Security",
+            "pages": [
+              "Phoenix/anti-detection",
+              "Phoenix/secure-mode"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Developer Platform API",
+        "groups": [
+          {
+            "group": "Overview",
+            "pages": [
+              "developer-api/index"
+            ]
+          },
+          {
+            "group": "Guides",
+            "pages": [
+              "developer-api/authentication",
+              "developer-api/rate-limits",
+              "developer-api/errors"
+            ]
+          },
+          {
+            "group": "Endpoints",
+            "pages": [
+              "developer-api/projects",
+              "developer-api/analytics",
+              "developer-api/keys",
+              "developer-api/versions",
+              "developer-api/webhooks"
+            ]
+          }
+        ]
+      }
+    ],
+    "global": {
+      "anchors": [
+        {
+          "anchor": "GitHub",
+          "href": "https://github.com/SiriusSoftwareLtd",
+          "icon": "github"
+        }
+      ]
+    }
+  },
+  "logo": {
+    "light": "/logo/light.svg",
+    "dark": "/logo/dark.svg"
+  },
+  "navbar": {},
+  "contextual": {
+    "options": [
+      "copy",
+      "view",
+      "chatgpt",
+      "claude",
+      "perplexity",
+      "mcp",
+      "cursor",
+      "vscode"
+    ]
+  },
+  "footer": {
+    "socials": {
+      "github": "https://github.com/SiriusSoftwareLtd"
+    }
+  }
+}
