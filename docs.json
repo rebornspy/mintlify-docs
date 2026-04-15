@@ -99,7 +99,7 @@
       "anchors": [
         {
           "anchor": "GitHub",
-          "href": "https://github.com/SiriusSoftwareLtd",
+          "href": "https://github.com/rebornspy/Phoenix",
           "icon": "github"
         }
       ]
@@ -124,7 +124,7 @@
   },
   "footer": {
     "socials": {
-      "github": "https://github.com/SiriusSoftwareLtd"
+      "github": "https://github.com/rebornspy/Phoenix"
     }
   }
 }
