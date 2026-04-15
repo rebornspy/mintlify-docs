@@ -5,31 +5,59 @@ description: How to create windows with Phoenix
 
 ## Window Creation
 
-`Phoenix:CreateWindow()` is the method used to create everything needed for UI development with Phoenix. Call it once after initializing the library.
+`Phoenix:CreateWindow()` is the method used to create everything needed for UI development with Phoenix.
+
+It creates:
+
+- The **boot window**
+- The **main window**
+- The **theme system**
+- The **UI toggle keybind**
+- The **config loading/saving system**
+- The **notification holder**
+
+Call it once after initializing the library:
 
 ```lua
 local Window = Phoenix:CreateWindow({
     Name = "Example Window",
+    LoadingText = "Phoenix Script"
     BootTitle = "Boot Window",
     MainTitle = "Main Window",
     Theme = "Default"
+    ToggleUiKey = K
 })
 ```
 
 ### Options
 
 <ResponseField name="Name" type="string" required>
-    If no boot/main title names are provided, this will take over.
+Title used by default for both the boot window and main window if BootTitle/MainTitle are not provided.
+Also used as the config filename: `Phoenix/<Name>.json`.
+</ResponseField>
+
+<ResponseField name="LoadingText" type="string" >
+Text displayed when the loading screen is active.
 </ResponseField>
 
 <ResponseField name="BootTitle" type="string">
-  Name displayed at the top of the boot window. If none is provided, the "Name" option will take over.
+Title displayed at the top of the boot window.
+If omitted, the `"Name"` option is used.
 </ResponseField>
 
 <ResponseField name="MainTitle" type="string">
-  Name displayed at the top of the main window. If none is provided, the "Name" option will take over.
+Title displayed at the top of the main window.
+If omitted, the `"Name"` option is used.
 </ResponseField>
 
 <ResponseField name="Theme" type="string">
-  Theme of the entire UI. Defaults to "Default" if no theme is provided. This can be changed while the script is running.
+Theme of the entire UI.
+Defaults to `"Default"` if not provided.
+See docs.phoenix.menu/Phoenix/Themes for a list of available themes.
+</ResponseField>
+
+<ResponseField name="ToggleUiKey" type="string">
+Key used to toggle the UI.
+Accepts simple strings like `"K"`, `"RightShift"`, etc.
+Internally normalized to `Enum.KeyCode` via `normalizeKey`.
 </ResponseField>
