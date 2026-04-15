@@ -1,6 +1,6 @@
 ---
-title: Windows
-description: How to create windows with Phoenix
+title: "Windows"
+description: "How to create windows with Phoenix"
 ---
 
 ## Window Creation
@@ -32,32 +32,77 @@ local Window = Phoenix:CreateWindow({
 ### Options
 
 <ResponseField name="Name" type="string" required>
-Title used by default for both the boot window and main window if BootTitle/MainTitle are not provided.
-Also used as the config filename: `Phoenix/<Name>.json`.
+  Title used by default for both the boot window and main window if BootTitle/MainTitle are not provided. Also used as the config filename: `Phoenix/<Name>.json`.
 </ResponseField>
 
-<ResponseField name="LoadingText" type="string" >
-Text displayed when the loading screen is active.
+<ResponseField name="LoadingText" type="string">
+  Text displayed when the loading screen is active.
 </ResponseField>
 
 <ResponseField name="BootTitle" type="string">
-Title displayed at the top of the boot window.
-If omitted, the `"Name"` option is used.
+  Title displayed at the top of the boot window. If omitted, the `"Name"` option is used.
 </ResponseField>
 
 <ResponseField name="MainTitle" type="string">
-Title displayed at the top of the main window.
-If omitted, the `"Name"` option is used.
+  Title displayed at the top of the main window. If omitted, the `"Name"` option is used.
 </ResponseField>
 
 <ResponseField name="Theme" type="string">
-Theme of the entire UI.
-Defaults to `"Default"` if not provided.
-See docs.phoenix.menu/Phoenix/Themes for a list of available themes.
+  Theme of the entire UI. Defaults to `"Default"` if not provided. See docs.phoenix.menu/Phoenix/Themes for a list of available themes.
 </ResponseField>
 
 <ResponseField name="ToggleUiKey" type="string" required>
-Key used to toggle the UI.
-Accepts simple strings like `"K"`, `"RightShift"`, etc.
-Internally normalized to `Enum.KeyCode` via `normalizeKey`.
+  Key used to toggle the UI. Accepts simple strings like `"K"`, `"RightShift"`, etc. Internally normalized to `Enum.KeyCode` via `normalizeKey`.
+</ResponseField>
+
+## Tab Creation
+
+`Window:CreateTab()` is the method used to put tabs into windows.
+
+This can be called however many times you need it to.
+
+```text
+local ExampleTab = Window:CreateTab({
+	Name = "Example Tab"
+})
+```
+
+or
+
+```lua
+local Tab = Window:CreateTab({ Name = "Example Tab" })
+```
+
+Either work. One is more compact while the other is easier to read.
+
+### Options
+
+<ResponseField name="Name" type="string">
+  Displayed name of the tab in the Boot and Main windows. Defaults to "Tab" if no name is given.
+</ResponseField>
+
+## Section Creation
+
+`Tab:CreateSection()` is the method used to divide tabs into sections.
+
+This can also be called however many times you need it to.
+
+```lua
+local ExampleSection = ExampleTab:CreateSection({
+	Name = "Example Section"
+})
+```
+
+or
+
+```lua
+local ExampleSection = ExampleTab:CreateSection({ Name = "Example Section" })
+```
+
+Again, either work. One is compact and one is readable.
+
+### Options
+
+<ResponseField name="Name" type="string">
+  Displayed name of the section.
 </ResponseField>

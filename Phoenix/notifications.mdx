@@ -1,0 +1,34 @@
+---
+title: "Notifications"
+---
+
+How to notify the user with Phoenix.
+
+Notifying the user is as easy as attaching a :Notify() at the end of your code.
+
+```lua
+section:CreateButton({
+	Name = "Button",
+	Callback = function()
+		window:Notify({
+			Title = "Notif Title",
+			Content = "Notif contents",
+			Duration = 2.5
+		})
+	end
+})
+```
+
+### Options
+
+<ResponseField name="Title" type="string">
+  The text displayed at the top of the notification.
+</ResponseField>
+
+<ResponseField name="Content" type="string">
+  The text displayed in the content area of the notification.
+</ResponseField>
+
+<ResponseField name="Duration" type="number">
+  The amount of time (seconds) it takes for the notification to disappear.
+</ResponseField>
