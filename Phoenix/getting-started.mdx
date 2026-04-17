@@ -1,7 +1,9 @@
 ---
-title: Initializing the Library
-description: How to load Phoenix into your script.
+title: "Initializing the Library"
+description: "How to load Phoenix into your script."
 ---
+
+## Load Phoenix
 
 Add the following line at or near the top of your script to load the Phoenix Library.
 
@@ -12,3 +14,15 @@ local Phoenix = loadstring(game:HttpGet("https://raw.githubusercontent.com/rebor
 ## Config Saving
 
 Config saving lets Phoenix load previous sessions settings and element values to the current session.
+
+<Steps>
+  <Step title="Define a Path">
+    Specify a path to save configs by defining `ConfigSavePath` in `CreateWindow()`. Default path takes the name of `Phoenix/"Name".json` with name being the name specified in the `Name` option.
+  </Step>
+  <Step title="Set Keys">
+    Every element except buttons and text elements have a `ConfigKey` option that needs to be defined. Have a different name for each key to prevent mix-ups.
+  </Step>
+  <Step title="That's it!">
+    That is all you need to do in order to safe configuration files for Phoenix! When importing/exporting configs is added, you can share these files to others for them to load.
+  </Step>
+</Steps>

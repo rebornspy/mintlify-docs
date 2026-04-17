@@ -6,29 +6,193 @@ description: "How to create elements that the user can interact with."
 ## Buttons
 
 ```lua
+local Button = Section:CreateButton({
+    Name = "Button",
+    Callback = function(),
+    end,
+})
 ```
 
 ## Dropdowns
 
 ```lua
+local Dropdown = Section:CreateDropdown({
+    Name = "Dropdown",
+    ConfigKey = "1,dropdown_ex",
+    Options = {"Option 1", "Option 2", "Option 3"},
+    Default = "Select",
+    Callback = function(option),
+    end,
+})
 ```
 
 ## Player Dropdowns
 
 ```lua
+local PlayerList = Section:CreatePlayerDropdown({
+    Name = "Player Dropdown",
+    ConfigKey = "1_plrdropdown_ex",
+    Default = "Select",
+    Callback = function(player, name),
+    end,
+})
 ```
 
 ## Sliders
 
 ```lua
+local Slider = Section:CreateSlider({
+    Name = "Slider",
+    ConfigKey = "1_slider_ex",
+    Min = 0,
+    Max = 10,
+    Step = 1,
+    Default = 5,
+    Callback = function(value),
+    end
+})
 ```
 
 ## Text Inputs
 
 ```lua
+local Input = Section:CreateInput({
+    Name = "Text",
+    ConfigKey = "1_text_ex",
+    Placeholder = "Type...",
+    Default = "",
+    Callback = function(text),
+    end,
+})
 ```
 
 ## Toggles
 
 ```lua
+local Toggle = Section:CreateToggle({
+    Name = "Toggle",
+    ConfigKey = "1_toggle_ex",
+    Default = false,
+    Callback = function(state),
+    end,
+})
 ```
+
+## Options
+
+### Global
+
+<ResponseField name="Name" type="string" required>
+  - The name being displayed to the side of the element.
+  - There is **no default** so make sure to define this.
+</ResponseField>
+
+<ResponseField name="ConfigKey" type="string" required>
+  - This key is the identifier for the configuration file.
+  - Make sure **every element has a different key** to prevent mix-ups.
+  - Note that buttons do not have this field due to there being nothing to save.
+    <Warning>
+      If an element is missing a key it **will not** be saved.
+    </Warning>
+</ResponseField>
+
+<ResponseField name="Callback()" type="function">
+  - This is the script/function that is being executed when the element is interacted with.
+  - Default is an **empty function**.
+  - Each element (except buttons) has a unique parameter that can be passed. **More on that below**.
+</ResponseField>
+
+### Dropdowns
+
+<ResponseField name="Options" type="table">
+  - A **table of options** that will be displayed in the dropdown when opened.
+  - There can be **as many options as you would like**.
+</ResponseField>
+
+<ResponseField name="Callback(opt)" type="function">
+  - The **opt** parameter can be used to dynamically change the **target** of a script using it.
+  - The parameter can be named **anything**.
+  - Default is **nil**/blank.
+</ResponseField>
+
+<ResponseField name="Default" type="string">
+  - The **default selected option** of the dropdown.
+  - Default is **nil**/blank.
+</ResponseField>
+
+### Player Dropdowns
+
+These are basically the same as regular dropdowns but the options are the players in the server.
+
+<ResponseField name="Callback(plr, name)" type="function">
+  - There are **2** parameters instead of one.
+    - One for the **selected player**.
+    - One for the selected **player's name**.
+  - They are **almost** the same but have their uses.
+  - Parameters can be called **anything**.
+</ResponseField>
+
+### Sliders
+
+<ResponseField name="Min" type="number">
+  - The **minimum value** for the slider.
+  - Default is **0**.
+  - Input from the text box will snap to this value if the input is lower.
+</ResponseField>
+
+<ResponseField name="Max" type="number">
+  - The **maximum value** for the slider.
+  - Default is **100**.
+  - Input from the text box will snap to this value if the input is higher.
+</ResponseField>
+
+<ResponseField name="Step" type="number">
+  - The **step** that **values will snap to**.
+  - Default is **1**.
+  - Input from the text box will round up or down to this value.
+</ResponseField>
+
+<ResponseField name="Default" type="number">
+  - The **default value** that the **slider will start off at**.
+  - Default is the **minimum value**.
+</ResponseField>
+
+<ResponseField name="Callback(val)" type="function">
+  - The **val** parameter can be used to dynamically alter the **value** of scripts using it.
+  - The parameter can be named **anything**.
+  - Default is an **empty function**.
+</ResponseField>
+
+### Text Inputs
+
+<ResponseField name="Placeholder" type="string">
+  - The text shown when the **box is empty** and the user **is** typing.
+  - Can be **literally anything** (that will fit in the box).
+  - Default is **empty**.
+</ResponseField>
+
+<ResponseField name="Default" type="string">
+  - The **default text** of the text box.
+  - Shown when the **box is empty** and the user **is not** typing.
+  - Can be **literally anything** (that will fit in the box).
+  - Default is **empty**.
+</ResponseField>
+
+<ResponseField name="Callback(text)" type="function">
+  - The **text** parameter can be used to dynamically altar **strings** of a script its being used in.
+  - The parameter can be named **anything**.
+  - Default is an **empty function**.
+</ResponseField>
+
+### Toggles
+
+<ResponseField name="Default" type="boolean">
+  - The **default value** of the toggle, can be true or false.
+  - Default is **false**.
+</ResponseField>
+
+<ResponseField name="Callback(val)" type="function">
+  - The parameter **val** can be used to dynamically alter the **state** of scripts using it.
+  - The parameter can be named **anything**.
+  - The default is an **empty function**.
+</ResponseField>

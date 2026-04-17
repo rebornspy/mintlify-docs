@@ -22,59 +22,66 @@
     "weight": 400
   },
   "navigation": {
-    "tabs": [
-      {
-        "tab": "Home",
-        "groups": [
-          {
-            "group": "Home",
-            "pages": ["index"]
-          }
-        ]
-      },
-      {
-        "tab": "Phoenix",
-        "groups": [
-          {
-            "group": "Overview",
-            "pages": [
-              "Phoenix/index"
-            ]
-          },
-          {
-            "group": "Getting started",
-            "pages": [
-              "Phoenix/getting-started",
-              "Phoenix/windows",
-              "Phoenix/notifications"
-            ]
-          },
-          {
-            "group": "Elements",
-            "pages": [
-              "Phoenix/elements/interactive",
-              "Phoenix/elements/keybinds",
-              "Phoenix/elements/text"
-            ]
-          },
-          {
-            "group": "Configuration",
-            "pages": [
-              "Phoenix/themes"
-            ]
-          }
-        ]
-      }
-    ],
     "global": {
       "anchors": [
         {
           "anchor": "GitHub",
-          "href": "https://github.com/rebornspy/Phoenix",
-          "icon": "github"
+          "icon": "github",
+          "href": "https://github.com/rebornspy/Phoenix"
         }
       ]
-    }
+    },
+    "languages": [
+      {
+        "language": "en",
+        "tabs": [
+          {
+            "tab": "Home",
+            "groups": [
+              {
+                "group": "Home",
+                "pages": [
+                  "index"
+                ]
+              }
+            ]
+          },
+          {
+            "tab": "Phoenix",
+            "groups": [
+              {
+                "group": "Overview",
+                "pages": [
+                  "Phoenix/index"
+                ]
+              },
+              {
+                "group": "Getting started",
+                "pages": [
+                  "Phoenix/getting-started",
+                  "Phoenix/windows",
+                  "Phoenix/notifications"
+                ]
+              },
+              {
+                "group": "Elements",
+                "pages": [
+                  "Phoenix/elements/interactive",
+                  "Phoenix/elements/keybinds",
+                  "Phoenix/elements/text"
+                ]
+              },
+              {
+                "group": "Configuration",
+                "pages": [
+                  "Phoenix/themes"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
   },
   "logo": {
     "light": "/logo/light.svg",
